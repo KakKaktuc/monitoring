@@ -1,0 +1,37 @@
+name: Run Tests
+
+# Триггер: запускать workflow при пуше в ветку main или pull request в main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Задачи, которые будут выполняться
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Используем последнюю версию Ubuntu
+
+    steps:
+      # Шаг 1: Проверка кода
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Шаг 2: Установка Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # Укажите версию Python, которую используете
+
+      # Шаг 3: Установка зависимостей
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install psutil mysql-connector-python
+
+      # Шаг 4: Запуск тестов
+      - name: Run tests
+        run: |
+          python -m unittest discover -s tests  # Запуск всех тестов в папке tests
