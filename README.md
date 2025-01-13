@@ -112,11 +112,11 @@
 
 ### Главное окно
 
-![[Главное окно.png]]
+![[Главное окно.png]](https://github.com/KakKaktuc/monitoring/blob/main/Главное%20окно.png)
 
 ### Окно истории
 
-![[Окно истории.png]]
+![[Окно истории.png]](https://github.com/KakKaktuc/monitoring/blob/main/Окно%20истории.png)
 
 ---
 
@@ -134,4 +134,3 @@ python -m unittest test_system_monitoring.py
 Ran 3 tests in 0.026s
 OK
 ```
-# monitoring
